@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/favicon.ico" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>momentum</title>
+    <script type="text/javascript">
+      function showHide (id)
+      {
+      var style = document.getElementById(id).style
+      if (style.visibility == "hidden")
+      style.visibility = "visible";
+      else
+      style.visibility = "hidden";
+      }
+        </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="player" id="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="volume">
+          <!--кнопка понижения  звук-->
+          <button class="volume-down">-vol</button>
+
+          <!--уровень звука-->
+          <span class="vol"></span>
+          <!--кнопка повышение звука-->
+          <button class="volume-up">+vol</button>
+        </div>
+        <div class="track">
+          <div class="audioTime" id="playhead"></div>
+        </div>
+        <ul class="play-list"></ul>
+      </div>
+
+      <button id="callback-button" class="header__button">
+        Application Settings
+      </button>
+
+      <div class="weather" id="weather">
+        <input
+          type="text"
+          class="city"
+          value="Minsk"
+          placeholder="[Enter сity]"
+          id="city"
+        />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </header>
+    <!------------------------------------------------------->
+    <!-- Модальное окно -->
+    <div class="modal" id="modal-1">
+      <div class="modal__content">
+        <button class="modal__close-button">
+          <img src="./assets/img/cross.jpg" alt="button" />
+        </button>
+        <!-- Контент модального окна-->
+        <div class="modal__description">
+          <p class="modal__title">Settings:</p>
+
+          <p class="modal_li">
+            greeting hide<input
+              type="checkbox"
+              class="checkbox"
+              id="6"
+              onclick="showHide('greeting');"
+            />
+          </p>
+
+          <p class="modal_li">
+            time hide<input type="checkbox" class="checkbox"  id="1" onclick="showHide('clock');" />
+          </p>
+
+          <p class="modal_li">
+            date hide<input type="checkbox" class="checkbox" id="2" onclick="showHide('date');" />
+          </p>
+
+          <p class="modal_li">
+            quote hide<input type="checkbox" class="checkbox"  id="3"  onclick="showHide('quote');" />
+          </p>
+
+          <p class="modal_li">
+            weather hide<input
+              type="checkbox"
+              class="checkbox" 
+              id="4"
+              onclick="showHide('weather');"
+            />
+          </p>
+
+          <p class="modal_li">
+            audio hide<input type="checkbox" class ="checkbox"  id="5" onclick="showHide('player');" />
+          </p>
+          
+        </div>
+      </div>
+    </div>
+    <!---------------------------------------------------------------------------->
+    <main class="main">
+      <div class="slider-icons">
+        <button class="slide-prev slider-icon"></button>
+        <button class="slide-next slider-icon"></button>
+      </div>
+      <time id="clock" class="time"></time>
+      <date id="date" class="date"></date>
+      <div class="greeting-container" id="greeting">
+        <span id="time_day" class="greeting"></span>
+        <input type="text" class="name" placeholder="[Enter name]" id="name" />
+      </div>
+    </main>
+    <footer class="footer">
+      <button class="change-quote" ></button>
+      <div class="quote_block" id="quote">
+        <div class="quote" ></div>
+        <div class="author"></div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+  </body>
+</html>
