@@ -180,20 +180,25 @@ let next = document.querySelector(".play-next"); // Берём кнопку пе
 let isPlay = false;
 let playNum = 0;
 let playListContainer = document.querySelector(".play-list");
+const track_title = document.querySelector('.track_title');// название трека который играет
+let track_time = document.querySelector(".track_time")//время трека
 
 function playAudio() {
   audio.src = playList[playNum].src;
   audio.currentTime = 0;
   //вкл и выкл одной кнопкой
   if (isPlay == false) {
+    track_title.textContent = playList[playNum].title;//показываем название трека при плей
     audio.play();
     isPlay = true;
   } else {
     audio.pause();
     isPlay = false;
+    track_title.textContent = playList[playNum].title;//показываем название трека при паузе и перелистывании
   }
 }
 play.addEventListener("click", playAudio);
+
 
 //меняем кнопку плей при клике
 function toggleBtn() {
@@ -256,14 +261,16 @@ document.querySelector(".volume-up").addEventListener("click", () => {
 
 //прогресс бар и автовоспроизведение следующей песни
 let audioPlay = setInterval(function () {
+  
   // Получаем значение на какой секунде песня
   let audioTime = Math.round(audio.currentTime);
   // Получаем всё время песни
   let audioLength = Math.round(audio.duration);
   // Назначаем ширину элементу time
   time.style.width = (audioTime * 100) / audioLength + "%";
+  //выводим время трека
+  track_time.textContent = `${String(Math.floor(audio.currentTime / 60))}:${String(Math.floor(audio.currentTime % 60)).padStart(2, '0')} / ${playList[playNum].duration}`;
   // Сравниваем, на какой секунде сейчас трек и всего сколько времени длится
-
   if (audioTime == audioLength && playNum < 11) {
     playNum++; // То Увеличиваем переменную
     playAudio(playNum); // Меняем трек
@@ -278,6 +285,8 @@ let audioPlay = setInterval(function () {
     isPlay = true;
   }
 }, 10);
+
+
 
 //настройки приложения
 

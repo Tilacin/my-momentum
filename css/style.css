@@ -65,16 +65,15 @@ background-color: rgb(100, 93, 93);
 .audioTime {
   
   width: 0;
-  height: 3px;
+  height: 5px;
   background-color: #a80707
 }
 
 .play-list {
   text-align: left;
+
 }
-.audio-playing {
-	color: rgb(132, 148, 255);
-}
+
 .play-item {
   position: relative;
   padding: 5px;
@@ -98,7 +97,7 @@ background-color: rgb(100, 93, 93);
 }
 
 .item-active::before {
-  color: #C5B358;
+  color: #0d1eb4;
 }
 
 .player-icon,
@@ -134,6 +133,7 @@ background-color: rgb(100, 93, 93);
 .play {
   width: 40px;
   height: 40px;
+
   background-size: 40px 40px;
   background-image: url("../assets/svg/play.svg");
 }
@@ -328,7 +328,7 @@ background-color: rgb(100, 93, 93);
   bottom: 0;
   left: 0;
   z-index: 10;
-  background: rgba(189, 183, 183, 0);
+  background: rgba(70, 67, 67);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -344,10 +344,10 @@ background-color: rgb(100, 93, 93);
   max-width: 500px;
   box-shadow: 5px 5px;
   padding: 50px;
-  background: #696666;
+  background: rgb(75, 74, 72);
   border-radius: 3px;
   position: relative;
-  box-shadow: 0 5px 15px black;
+  box-shadow: 0 5px 15px rgb(226, 224, 224);
 }
  
 .modal__close-button {
@@ -375,9 +375,11 @@ background-color: rgb(100, 93, 93);
 .modal__title {
   font-size: 1.5rem;
   text-transform: uppercase;
-  color: hsl(0, 0%, 0%);
+  color: hsl(207, 89%, 48%);
   margin: 0 0 15px;
-  
+  text-shadow: #cad5e2 1px 1px 0, #cad5e2 1px 1px 0, 
+  #cad5e2 2px 2px 0, #cad5e2 2px 2px 0, 
+  #cad5e2 3px 3px 0;
 }
  
 .modal__description {
@@ -397,7 +399,7 @@ background-color: rgb(100, 93, 93);
   bottom: 0;
   left: 0;
   z-index: 100;
-  background: rgba(5, 60, 97, 0.2);
+  background: rgba(5, 60, 97, 0.4);
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -427,7 +429,7 @@ background-color: rgb(100, 93, 93);
   text-align: justify;
   padding: 5px;
   font: bold 1.3em Arial, sans-serif;
-  color: #0e0d0d;
+  color: #1d72d3;
   text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
                #cad5e2 2px 2px 0, #cad5e2 2px 2px 0, 
                #cad5e2 3px 3px 0;
@@ -435,7 +437,6 @@ background-color: rgb(100, 93, 93);
 .checkbox{
 
 margin-left: 20px;;
-max-width: 40px;
 text-align: justify
 }
 #whatever {
@@ -459,5 +460,42 @@ text-align: justify
   visibility: visible;
 }
 .audio-playing {
-	color: rgb(132, 148, 255);
+	color: rgb(32, 19, 221);
 }
+
+/*-----------------------------------------------------*/
+
+.track_title {
+  
+  max-width: 310px;
+  margin-top: 10px;
+  color: hsl(217, 80%, 45%);
+  text-shadow:
+       2px  2px 0 rgb(233, 231, 231),
+      -1px -1px 0 rgb(235, 232, 232),  
+       1px -1px 0 rgb(240, 235, 235),
+      -1px  1px 0 rgb(238, 236, 236),
+       1px  1px 0 #e6e1e1;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+ text-overflow: ellipsis;
+}
+
+.track_time {
+  
+  padding: 5px;
+  text-align: left;
+}/*
+.audio-playing {
+	color: rgb(32, 19, 221);
+}*/
+.play-list {
+
+  text-overflow: ellipsis;
+ /* background: rgba(70, 67, 67,0.3);*/
+}
+  
